@@ -59,7 +59,10 @@ spec:
 ## Adım 4: Uygulamaları Çalıştırma 
 
 ilk minikube çalıştıralım 
-```minikube start```
+
+```
+minikube start
+```
 
 sonra dosyalarını apply edelim  
 
@@ -70,7 +73,9 @@ kubectl apply -f alpine-pod-fail.yaml
 
 ## Adım 5: Pod Durumları kontrol edelim 
 
-```kubectl get pods```
+```
+kubectl get pods
+```
 
 Başarılı olan init pod running olacaktır ve ana containerlar çalışacaktır 
 başarısız olan pod ise ` Init:Error`  veya` Init:CrashLoopBackOff` durumunda olacaktır ve ana container'lar çalışmayacaktır.
