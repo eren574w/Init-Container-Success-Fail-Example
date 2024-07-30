@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine-pod-fail
+spec:
+  initContainers:
+  - name: init-myservice
+    image: busybox
+    command: ['sh', '-c', 'echo "Init container başarısız..." && exit 1']  # exit 1 ile hata oluşturuyoruz
+  containers:
+  - name: alpine-container-1
+    image: alpine
+    command: ['sh', '-c', 'echo "Ana konteyner 1 çalışıyor..." && sleep 3600']
+  - name: alpine-container-2
+    image: alpine
+    command: ['sh', '-c', 'echo "Ana konteyner 2 çalışıyor..." && sleep 3600']
